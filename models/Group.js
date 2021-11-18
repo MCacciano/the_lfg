@@ -5,11 +5,12 @@ const GroupSchema = new Schema({
     type: String,
     required: true,
   },
-//   owner: {
-//     type: mongoose.Schema.ObjectId,
-//     ref: 'User',
-//     required: true,
-//   },
+  owner: {
+    type: Schema.ObjectId,
+    ref: 'User',
+  },
+  members: [{ type: Schema.ObjectId, ref: 'User' }],
+  //   schedule: {},
 });
 
 module.exports = model('Groups', GroupSchema);
