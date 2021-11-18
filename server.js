@@ -11,7 +11,8 @@ const groupsRouter = require('./routes/groups');
 
 const app = express();
 
-
+// body parser
+app.use(express.json());
 
 // mount routers
 app.use('/api/v1/groups', groupsRouter);
