@@ -9,7 +9,13 @@ const GroupSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User',
   },
-  members: [{ type: Schema.ObjectId, ref: 'User' }],
+  members: {
+      type: Array,
+      of: {
+          type: Schema.ObjectId,
+          ref: 'User'
+      }
+  }
   //   schedule: {},
 });
 
