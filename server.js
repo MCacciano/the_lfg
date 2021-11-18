@@ -1,12 +1,17 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 
-dotenv.config({ path: './config/.env' })
+dotenv.config({ path: './config/.env' });
+
+connectDB();
 
 // import routers
 const groupsRouter = require('./routes/groups');
 
 const app = express();
+
+
 
 // mount routers
 app.use('/api/v1/groups', groupsRouter);
